@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}           
+<p class="text-info text-center">Answer the prompts to complete the story!</p>
+<form action="/story" class="form-wrapper">
+    {% for prompt in prompts %}
+    <div class="form-group2">
+        <label class="form-label mt-4 text-capitalize">{{prompt.replace("_", " ")}}</label>
+        <input type="text" name="{{prompt}}" class="form-text" placeholder={{prompt}}>
+    </div>
+    {% endfor %}
+    <div class="form-group2 mt-5">
+    <input type="submit" class="btn btn-outline-primary" value="Tell story"></div>
+</form>
+{% endblock %}
